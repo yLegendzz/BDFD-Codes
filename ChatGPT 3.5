@@ -1,0 +1,26 @@
+$c[Comando deve estar no BDScript 2.]
+
+$nomention
+$reply
+$botTyping
+
+$var[mensagem;$replaceText[$replaceText[$message;";';-1];
+; ;-1]]
+
+$argsCheck[>1;> **Informe alguma pergunta para o chatgpt!**]
+
+$title[Chat GPT 3.5]
+$color[9A81FF]
+$httpAddHeader[Content-Type;application/json]
+$httpAddHeader[Authorization;Bearer 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]
+$httpPost[https://api.openai.com/v1/chat/completions;{
+   "model": "gpt-3.5-turbo",
+   "max_tokens": 700,
+   "temperature": 0,
+   "top_p": 1,
+   "n": 1,
+   "messages": [{"role": "user", "content": "$var[mensagem]"}\]
+}]
+
+$description[$httpResult[choices;0;message;content]]
+
