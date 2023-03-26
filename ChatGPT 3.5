@@ -1,4 +1,7 @@
 $c[Comando deve estar no BDScript 2.]
+$c[troque APIKEY abaixo pela sua key da OpenAI. veja esse vídeo para saber como pegar sua key: https://youtu.be/VFBzh4YPOpU]
+
+$var[key;APIKEY]
 
 $nomention
 $reply
@@ -12,7 +15,7 @@ $argsCheck[>1;> **Informe alguma pergunta para o chatgpt!**]
 $title[Chat GPT 3.5]
 $color[9A81FF]
 $httpAddHeader[Content-Type;application/json]
-$httpAddHeader[Authorization;Bearer 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]
+$httpAddHeader[Authorization;Bearer $var[key]]
 $httpPost[https://api.openai.com/v1/chat/completions;{
    "model": "gpt-3.5-turbo",
    "max_tokens": 700,
