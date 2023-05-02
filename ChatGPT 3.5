@@ -25,5 +25,9 @@ $httpPost[https://api.openai.com/v1/chat/completions;{
    "messages": [{"role": "user", "content": "$var[mensagem]"}\]
 }]
 
+$if[$httpResult[error;message]==You exceeded your current quota, please check your plan and billing details.]
+$description[Olá, se você está vendo esta mensagem então o dono do comando colocou uma Chave que não possui créditos na OpenAI, você pode comprar créditos no mesmo site que criou a key.
+*OBS: antigamente a OpenAI dava uma quantia de créditos gratuito para usar, atualmente acho que isso não acontece mais.*]
+$else
 $description[$httpResult[choices;0;message;content]]
-
+$endif
