@@ -1,0 +1,25 @@
+$c[command must be in BDScript 2.]
+$c[change APIKEY below for your OpenAI key. Watch this video to learn how to get your key: https://youtu.be/VFBzh4YPOpU (it's a video where i teach how to create the ChatGPT command)]
+
+$var[key;APIKEY]
+
+$nomention
+
+$var[msg;$replaceText[$replaceText[$message;";';-1];
+; ;-1]]
+
+$httpAddHeader[Content-Type;application/json]
+$httpAddHeader[Authorization;Bearer $var[key]]
+$httpPost[https://api.openai.com/v1/moderations;{
+  "input": "$var[msg]"
+}]
+
+
+$if[$httpResult[error;message]==You exceeded your current quota, please check your plan and billing details.]
+$description[You don't have enough credits in openai.]
+$elseif[$httpResult[error;message]==Incorrect API key provided: $var[key]. You can find your API key at https://platform.openai.com/account/api-keys.]
+$description[invalid key.
+$httpResult[error;message]]
+$else
+$description[$httpResult[results]]
+$endif
