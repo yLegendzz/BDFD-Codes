@@ -11,7 +11,7 @@ $var[msg;$replaceText[$replaceText[$message;";';-1];
 $httpAddHeader[Content-Type;application/json]
 $httpAddHeader[Authorization;Bearer $var[key]]
 
-$httpPost[https://api.openai.com/v1/moderations;{
+$httpPost[https://api.openai.com/v1/images/generations;{
   "prompt": "$var[msg]",
   "size": "1024x1024"
 }]
