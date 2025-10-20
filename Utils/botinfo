@@ -1,0 +1,16 @@
+$nomention
+$reply
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+
+$title[🤖 | Informações do Bot]
+$description[Olá! Sou uma aplicação altamente avançada desenvolvida pelo Bot Designer for Discord!
+Atualmente estou em **$numberSeparator[$serverCount;.] Servidores**, com um total de **$numberSeparator[$allMembersCount;.] Usuários.**]
+
+$var[creation_date;$calculate[($var[user] / 4194304 + 1420070400000) / 1000]]
+$addField[📅 Data de criação:;<t:$var[creation_date]:f> (<t:$var[creation_date]:R>)]
+
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$authorID]]
+$color[#5cf4b2]
