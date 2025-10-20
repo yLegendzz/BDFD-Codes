@@ -8,8 +8,9 @@
 
 ![⚠️](https://img.shields.io/badge/⚠️-Aviso-red)  
 - Scripts experimentais – **use por sua conta e risco**  
-- Alguns códigos estão **descontinuados**  
-- Faça **backup** do seu código original antes de testar  
+- Alguns códigos estão **descontinuados**
+- Todos os comandos foram feitos para suporte em **Slash** apenas
+- Faça **backup** do seu código original antes de testar
 
 
 ## ✨ Recursos
