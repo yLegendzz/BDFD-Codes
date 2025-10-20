@@ -1,0 +1,9 @@
+$nomention
+$reply
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+$title[🏓 Pong!]
+$description[**Ping atual:** *$pingms*]
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$authorID]]
+$color[#FFFFFF]
