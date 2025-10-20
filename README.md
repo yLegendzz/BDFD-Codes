@@ -1,6 +1,6 @@
 # 🤖 BDFD Scripts Hub
 
-![Banner](https://via.placeholder.com/900x200/7289DA/ffffff?text=BDFD+Scripts+Hub)
+![Banner](https://cdn.discordapp.com/banners/566363823137882154/a8cd6ed3d5c665e1443e5fe8fa2ab8c8.jpg?size=2048)
 
 🚀 **Repositório de códigos para o Bot Designer for Discord (BDFD)**
 
