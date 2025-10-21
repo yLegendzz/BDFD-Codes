@@ -1,0 +1,24 @@
+$c[
+======== CONSTRUÇÃO SLASH COMANDO =========
+- Opções:
+Nome: user
+Tipo de opção: User
+Opção Necessária: ❌
+======== CONSTRUÇÃO SLASH COMANDO =========
+]
+$nomention
+$reply
+
+$var[user;$findUser[$message[user];yes]]
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+
+$title[🖼 | Avatar de $displayName[$var[user]]]
+$description[É um belo avatar!]
+$image[$userAvatar[$var[user]]?size=4096]
+$addButton[no;$userAvatar[$var[user]]?size=4096;Download;primary;no;]
+
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$authorID]]
+$color[#FFFFFF]
