@@ -1,0 +1,36 @@
+$c[
+======== CONSTRUÇÃO SLASH COMANDO =========
+- Opções:
+Nome: quantia
+Tipo de opção: Integer
+Mínimo: 2
+Máximo: 100
+Opção Necessária: ✅
+======== CONSTRUÇÃO SLASH COMANDO =========
+]
+
+$nomention
+$reply
+
+$var[quantia;$message[quantia]]
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+
+$try
+
+$clear[$var[quantia]]
+$title[🗑 | $var[quantia] Mensagens Deletadas!]
+$description[Apaguei todas as mensagens que você pediu!]
+$color[#FFFFFF]
+
+$catch
+$title[❌ | Ocorreu algum erro!]
+
+$description[Vixe! Parece que ocorreu um erro ao tentar apagar as mensagens... por favor tente novamente mais tarde!]
+$color[#FF0000]
+
+$endtry
+
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$authorID]]
