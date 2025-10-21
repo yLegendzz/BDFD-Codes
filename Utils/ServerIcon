@@ -1,0 +1,14 @@
+$nomention
+$reply
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+
+$title[🖼 | Ícone do servidor $serverName[$guildID]]
+$description[É um belo ícone!]
+$image[$serverIcon[$guildID]?size=4096]
+$addButton[no;$serverIcon[$guildID]?size=4096;Download;primary;no;]
+
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$authorID]]
+$color[#FFFFFF]
