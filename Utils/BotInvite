@@ -1,0 +1,14 @@
+$nomention
+$reply
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+
+$title[🤖 | Meu convite!]
+$description[Psiu, quer me adicionar em outro servidor? Você pode fazer isso [clicando aqui\]($getBotInvite) ou então apertando no botão aqui em baixo!]
+
+$addButton[no;$getBotInvite;Convidar;secondary;no;]
+
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$authorID]]
+$color[#5cf4b2]
