@@ -1,0 +1,43 @@
+$nomention
+$reply
+
+$defer
+$var[color;$cropText[$replaceText[$message[code];#;];6;]]
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+$footer[$username[$botID]]
+$footerIcon[$userAvatar[$botID]]
+
+$try
+
+$c[API 1]
+$httpGet[https://api.alexflipnote.dev/colour/$var[color]]
+$title[<:icons_magicwand:1309682274496806953> | $httpResult[name]  •  $httpResult[hex;string]]
+$image[$httpResult[images;gradient]]
+$thumbnail[$httpResult[images;square]]
+$color[$httpResult[hex;string]]
+
+$var[INT;$httpResult[int]]
+
+$var[brilho;`$httpResult[brightness]%`]
+ 
+$c[API 2]
+$httpGet[https://www.thecolorapi.com/id?hex=$var[color]]
+$description[- **Brilho:** $var[brilho]
+
+- **XYZ:**
+-# $replaceText[$replaceText[$replaceText[$httpResult[XYZ;value];(;;-1];);;-1];XYZ;;-1]
+- **RBG:**
+-# $replaceText[$replaceText[$replaceText[$httpResult[rgb;value];(;;-1];);;-1];rgb;;-1]
+- **HSL:**
+-# $replaceText[$replaceText[$replaceText[$httpResult[hsl;value];(;;-1];);;-1];hsl;;-1]
+- **INT:**
+-# $var[INT]]
+$catch
+$ephemeral
+$title[<Sem retorno.]
+$footer[desculpe pela inconveniência.]
+$color[#f54242]
+$description[Insira um código HEX válido, a API não funcionou corretamente pois não encontrou o código HEX que você inseriu.]
+$endtry
