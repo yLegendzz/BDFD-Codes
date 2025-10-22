@@ -1,8 +1,17 @@
+$c[
+======== CONSTRUÇÃO SLASH COMANDO =========
+- Opções:
+Nome: cor
+Tipo de opção: Text
+Opção Necessária: ✅
+======== CONSTRUÇÃO SLASH COMANDO =========
+]
+
 $nomention
 $reply
 
 $defer
-$var[color;$cropText[$replaceText[$message[code];#;];6;]]
+$var[color;$cropText[$replaceText[$message[cor];#;];6;]]
 
 $author[$username[$authorID]]
 $authorIcon[$userAvatar[$authorID]]
