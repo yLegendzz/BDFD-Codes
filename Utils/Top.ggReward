@@ -1,0 +1,47 @@
+$c[
+======== INSTRUÇÕES =========
+- Abaixo, troque "AUTORIZAÇÃO" pelo seu código de autorização/token do Top.gg (Não é o token do seu bot.)
+======== INSTRUÇÕES =========
+]
+
+$var[auth;AUTORIZAÇÃO]
+
+$nomention
+reply
+$defer
+
+$httpAddHeader[Authorization;$var[auth]]
+
+$httpGet[https://top.gg/api/bots/$botID/check?userId=$authorID]
+
+$author[$username[$authorID]]
+$authorIcon[$userAvatar[$authorID]]
+$addTimestamp
+$footerIcon[$userAvatar[$botID]]
+$thumbnail[$userAvatar[$authorID]]
+$embeddedURL[https://top.gg/bot/1071825122467524688]
+
+$if[$httpResult[voted]==]
+$ephemeral
+$title[API fora do ar.]
+$description[Infelizmente, os serviços da Top.gg API estão fora do ar, o que torna impossível realizar a verificação do voto, por favor, tente novamente mais tarde.]
+$footer[desculpe pela inconveniência.]
+$color[#f54242]
+$stop
+$endif
+
+$if[$round[$httpResult[voted];0]==1]
+$defer
+$globalCooldown[24h;> **$username: Você pode coletar o seu prêmio novamente <t:$sum[$getTimestamp;$getCooldown[global]]:R>!**]
+
+$title[<:topgg:1348802723587424346> Obrigada por votar!]
+$description[Você obteve seu premio!]
+$thumbnail[$userAvatar[$authorID]]
+$color[#7627f5]
+
+$else
+$title[<a:erro:1215666965369331813> Ops, parece que você ainda não votou!]
+$description[Visite o site [**$username[$botID]**\](https://top.gg/bot/$botID) para votar em mim, e então use o comando novamente!]
+$color[#7627f5]
+$addButton[yes;https://top.gg/bot/1071825122467524688;;link;no;]
+$endif
